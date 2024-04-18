@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "../components/Footer";
 import Options from "../components/Options";
 import TextAreaBox from "../components/TextAreaBox";
 
@@ -9,15 +10,15 @@ const Home = () => {
 
   const onChangeHandler = (box, data) => {
     console.log(box + ": " + data);
-    if (box == "top") setInput1(data);
-    else if (box == "dropdown") setOperator(data);
+    if (box === "top") setInput1(data);
+    else if (box === "dropdown") setOperator(data);
     else setInput2(data);
     // console.log()
   };
 
   const onClickHandler = (data) => {
     // console.log(data);
-    if (data == "right") {
+    if (data === "right") {
       let finalData = formatData(input1, operator);
       setInput2(finalData);
     } else {
@@ -58,6 +59,7 @@ const Home = () => {
           defaultVal={input2}
         />
       </div>
+      <Footer />
     </section>
   );
 };
